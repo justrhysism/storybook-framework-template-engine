@@ -1,0 +1,11 @@
+{% liquid
+	if primary
+		assign _mode = "storybook-button--primary"
+	else
+		assign _mode = "storybook-button--secondary"
+	endif
+%}
+{% capture _style %}
+	{% if backgroundColor %}background-color: {{ backgroundColor }};{% endif %}
+{% endcapture %}
+<button class="storybook-button storybook-button--{{ buttonSize | default: 'medium' }} {{ _mode }}" style="{{ _style | strip_newlines }}">{{ label }}</button>
