@@ -20,19 +20,6 @@ export async function renderToDOM(
   domElement: HTMLElement
 ) {
   const { parameters } = storyContext;
-  const renderFn = parameters.templateEngine?.render;
-
-  if (!renderFn) {
-    showError({
-      title: `Missing render function parameter from the story: "${name}" of "${kind}".`,
-      description: dedent`
-        Did you forget to provide the render function?
-        Provide your template render function via "parameters.templateEngine.render" either globally
-        in your ".storybook/preview.js" or via story parameters.
-      `,
-    });
-    return;
-  }
 
   const template = storyFn();
   showMain();
@@ -55,6 +42,21 @@ export async function renderToDOM(
       description: dedent`
         Did you forget to return the template snippet from the story?
         Use "() => <your snippet or node>" or when defining the story.
+      `,
+    });
+    return;
+  }
+
+  const renderFn = parameters.templateEngine?.render;
+
+  // Check for render function if we actually need it (i.e. the story returns a string)
+  if (!renderFn) {
+    showError({
+      title: `Missing render function parameter from the story: "${name}" of "${kind}".`,
+      description: dedent`
+        Did you forget to provide the render function?
+        Provide your template render function via "parameters.templateEngine.render" either globally
+        in your ".storybook/preview.js" or via story parameters.
       `,
     });
     return;
