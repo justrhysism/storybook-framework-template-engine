@@ -1,4 +1,4 @@
-import { addParameters } from '@storybook/template-engine';
+import { addParameters } from 'storybook-framework-template-engine';
 import { liquidEngine } from './engine';
 
 addParameters({

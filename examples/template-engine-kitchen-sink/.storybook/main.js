@@ -2,6 +2,8 @@ const path = require('path');
 const { templatesDir } = require('./engine');
 
 module.exports = {
+  framework: 'storybook-framework-template-engine',
+
   // this dirname is because we run tests from project root
   stories: ['../stories/**/*.stories.*'],
   logLevel: 'debug',

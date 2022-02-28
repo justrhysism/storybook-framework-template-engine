@@ -4,5 +4,6 @@ import { LoadOptions } from '@storybook/core-common';
 export default {
   packageJson: sync({ cwd: __dirname }).packageJson,
   framework: 'template-engine',
+  frameworkPath: 'storybook-framework-template-engine',
   frameworkPresets: [require.resolve('./framework-preset-template-engine')],
 } as LoadOptions;

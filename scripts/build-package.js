@@ -12,7 +12,7 @@ const getStorybookPackages = () => {
 
   const packages = listCommand.output
     .toString()
-    .match(/@storybook\/(.)*/g)
+    .match(/(@storybook\/(.)*)|(storybook-framework-template-engine)/g)
     .sort();
 
   return packages;
@@ -33,7 +33,7 @@ function run() {
     .map((package) => {
       return {
         name: package,
-        suffix: package.replace('@storybook/', ''),
+        suffix: package.replace('@storybook/', '').replace('storybook-framework-', ''),
         defaultValue: false,
         helpText: `build only the ${package} package`,
       };
@@ -115,10 +115,10 @@ function run() {
         .map((key) => key.suffix)
         .filter(Boolean);
 
-      let glob =
-        packageNames.length > 1
-          ? `@storybook/{${packageNames.join(',')}}`
-          : `@storybook/${packageNames[0]}`;
+      let glob = 'storybook-framework-template-engine';
+      // packageNames.length > 1
+      //   ? `@storybook/{${packageNames.join(',')}}`
+      //   : `@storybook/${packageNames[0]}`;
 
       const isAllPackages = process.argv.includes('--all');
       if (isAllPackages) {

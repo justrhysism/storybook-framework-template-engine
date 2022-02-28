@@ -6091,35 +6091,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/template-engine@*, @storybook/template-engine@workspace:app/template-engine":
-  version: 0.0.0-use.local
-  resolution: "@storybook/template-engine@workspace:app/template-engine"
-  dependencies:
-    "@storybook/addons": 6.4.19
-    "@storybook/client-api": 6.4.19
-    "@storybook/core": 6.4.19
-    "@storybook/core-common": 6.4.19
-    "@storybook/csf": 0.0.2--canary.87bc651.0
-    "@storybook/preview-web": 6.4.19
-    "@storybook/store": 6.4.19
-    "@types/webpack-env": ^1.16.0
-    core-js: ^3.8.2
-    global: ^4.4.0
-    html-loader: ^1.3.2
-    react: 16.14.0
-    react-dom: 16.14.0
-    read-pkg-up: ^7.0.1
-    regenerator-runtime: ^0.13.7
-    ts-dedent: ^2.0.0
-  peerDependencies:
-    "@babel/core": "*"
-  bin:
-    build-storybook: ./bin/build.js
-    start-storybook: ./bin/index.js
-    storybook-server: ./bin/index.js
-  languageName: unknown
-  linkType: soft
-
 "@storybook/theming@npm:6.4.19":
   version: 6.4.19
   resolution: "@storybook/theming@npm:6.4.19"
@@ -24026,6 +23997,35 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
+"storybook-framework-template-engine@*, storybook-framework-template-engine@workspace:app/template-engine":
+  version: 0.0.0-use.local
+  resolution: "storybook-framework-template-engine@workspace:app/template-engine"
+  dependencies:
+    "@storybook/addons": 6.4.19
+    "@storybook/client-api": 6.4.19
+    "@storybook/core": 6.4.19
+    "@storybook/core-common": 6.4.19
+    "@storybook/csf": 0.0.2--canary.87bc651.0
+    "@storybook/preview-web": 6.4.19
+    "@storybook/store": 6.4.19
+    "@types/webpack-env": ^1.16.0
+    core-js: ^3.8.2
+    global: ^4.4.0
+    html-loader: ^1.3.2
+    react: 16.14.0
+    react-dom: 16.14.0
+    read-pkg-up: ^7.0.1
+    regenerator-runtime: ^0.13.7
+    ts-dedent: ^2.0.0
+  peerDependencies:
+    "@babel/core": "*"
+  bin:
+    build-storybook: ./bin/build.js
+    start-storybook: ./bin/index.js
+    storybook-server: ./bin/index.js
+  languageName: unknown
+  linkType: soft
+
 "stream-browserify@npm:^2.0.1":
   version: 2.0.2
   resolution: "stream-browserify@npm:2.0.2"
@@ -24661,7 +24661,6 @@ resolve@1.1.7:
     "@storybook/core": 6.4.19
     "@storybook/core-events": 6.4.19
     "@storybook/source-loader": 6.4.19
-    "@storybook/template-engine": "*"
     "@types/lodash-es": ^4
     "@types/nunjucks": ^3
     autoprefixer: ^10.0.1
@@ -24673,6 +24672,7 @@ resolve@1.1.7:
     nunjucks: ^3.2.3
     postcss: ^8.2.4
     postcss-color-rebeccapurple: ^6.0.0
+    storybook-framework-template-engine: "*"
   languageName: unknown
   linkType: soft
 

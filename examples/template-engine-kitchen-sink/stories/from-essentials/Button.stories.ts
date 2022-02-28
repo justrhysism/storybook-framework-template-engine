@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/template-engine';
+import { Meta } from 'storybook-framework-template-engine';
 import { bindLiquidRenderTemplate } from '../utils';
 
 import './button.css';

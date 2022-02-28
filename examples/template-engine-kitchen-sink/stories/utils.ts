@@ -1,4 +1,4 @@
-import { Story, StoryContext } from 'app/template-engine/src/client';
+import { Story, StoryContext } from 'storybook-framework-template-engine';
 import { escape, isString } from 'lodash-es';
 
 export const createLiquidRenderTemplate = (templateName: string, args: Record<string, any>) => {

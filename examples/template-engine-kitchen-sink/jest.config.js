@@ -7,5 +7,5 @@ module.exports = {
     ...config.transform,
     '.*\\.(html)$': '<rootDir>/node_modules/jest-raw-loader',
   },
-  moduleFileExtensions: [...config.moduleFileExtensions, 'html'],
+  moduleFileExtensions: [...config.moduleFileExtensions, 'html', 'liquid'],
 };
