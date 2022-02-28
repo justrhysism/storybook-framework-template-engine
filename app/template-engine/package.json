@@ -3,7 +3,9 @@
   "version": "0.0.1-alpha.0",
   "description": "Storybook for Templating Engines: View templated snippets in isolation with Hot Reloading.",
   "keywords": [
-    "storybook"
+    "storybook",
+    "liquidjs",
+    "nunjucks"
   ],
   "homepage": "https://github.com/justrhysism/storybook-framework-template-engine/tree/main/app/template-engine",
   "bugs": {
