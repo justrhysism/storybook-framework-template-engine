@@ -42,8 +42,13 @@ const engine = new Liquid({
 
 export const parameters = {
   templateEngine: {
-    // Receives the story template and pass to renderer
-    render: (template) => engine.parseAndRender(template), // Returns Promise (async)
+    // Receives the story template and args which can be passed to renderer
+    render: (template, args) => engine.parseAndRender(template), // Returns Promise (async)
+
+    /*
+      // Nunjucks example (@see: https://mozilla.github.io/nunjucks/api.html#renderstring)
+      render: (template, args) => nunjucks.renderString(template, args),
+    */
   },
 };
 ```

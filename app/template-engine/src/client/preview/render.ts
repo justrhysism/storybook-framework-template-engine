@@ -48,6 +48,7 @@ export async function renderToDOM(
   }
 
   const renderFn = parameters.templateEngine?.render;
+  const args = parameters.args ?? {};
 
   // Check for render function if we actually need it (i.e. the story returns a string)
   if (!renderFn) {
@@ -62,7 +63,7 @@ export async function renderToDOM(
     return;
   }
 
-  const element = await renderFn(template);
+  const element = await renderFn(template, args);
 
   if (typeof element === 'string') {
     domElement.innerHTML = element;
