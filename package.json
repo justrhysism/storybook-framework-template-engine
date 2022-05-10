@@ -40,14 +40,7 @@
   },
   "workspaces": {
     "packages": [
-      "addons/*",
-      "addons/storyshots/*",
-      "app/*",
-      "examples-native/*",
-      "examples/*",
-      "!examples/web-components-kitchen-sink",
-      "lib/*",
-      "lib/cli/test/run/*"
+      "app/*"
     ]
   },
   "scripts": {
@@ -55,16 +48,16 @@
     "bootstrap": "node ./scripts/bootstrap.js",
     "build": "node ./scripts/build-package.js",
     "build-manager": "node -r esm ./scripts/build-manager.js",
-    "build-packs": "lerna exec --scope 'storybook-framework-template-engine' -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
+    "build-packs": "lerna exec --scope '@storybook/*' -- \\$LERNA_ROOT_PATH/scripts/build-pack.sh \\$LERNA_ROOT_PATH/packs",
     "build-storybooks": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true node -r esm ./scripts/build-storybooks.js",
     "changelog": "pr-log --sloppy --cherry-pick",
     "changelog:next": "pr-log --sloppy --since-prerelease",
     "coverage": "codecov",
     "danger": "danger",
     "dev": "concurrently --kill-others \"yarn dev:tsc\" \"yarn dev:babel\"",
-    "dev:babel": "lerna exec --scope \"storybook-framework-template-engine\" --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/utils/watch-babel.js",
+    "dev:babel": "lerna exec --scope \"@storybook/*\" --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/utils/watch-babel.js",
     "dev:check-types": "tsc --noEmit",
-    "dev:tsc": "lerna exec --scope \"storybook-framework-template-engine\" --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/utils/watch-tsc.js",
+    "dev:tsc": "lerna exec --scope \"@storybook/*\" --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/utils/watch-tsc.js",
     "github-release": "github-release-from-changelog",
     "generate-repros": "zx scripts/repros-generator/index.mjs",
     "lint": "yarn lint:js . && yarn lint:md .",
@@ -101,6 +94,7 @@
   },
   "browserslist": "defaults",
   "resolutions": {
+    "eslint-config-airbnb": "^18.1.0",
     "serialize-javascript": "^3.1.0"
   },
   "devDependencies": {
@@ -125,6 +119,16 @@
     "@emotion/snapshot-serializer": "^0.8.2",
     "@linear/sdk": "^1.21.0",
     "@nicolo-ribaudo/chokidar-2": "^2.1.8",
+    "@nrwl/cli": "12.3.4",
+    "@nrwl/nx-cloud": "12.1.1",
+    "@nrwl/tao": "12.3.4",
+    "@nrwl/workspace": "12.3.4",
+    "@storybook/babel-plugin-require-context-hook": "1.0.1",
+    "@storybook/eslint-config-storybook": "^2.4.0",
+    "@storybook/jest": "^0.0.5",
+    "@storybook/linter-config": "^2.5.0",
+    "@storybook/semver": "^7.3.2",
+    "@storybook/testing-library": "^0.0.7",
     "@testing-library/dom": "^7.29.4",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.2",
@@ -167,6 +171,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.17.0",
+    "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react": "^7.22.0",
@@ -213,6 +218,7 @@
     "shelljs": "^0.8.4",
     "shx": "^0.3.2",
     "sort-package-json": "^1.48.1",
+    "storybook-framework-template-engine": "workspace:*",
     "teamcity-service-messages": "^0.1.11",
     "trash": "^7.0.0",
     "ts-dedent": "^2.0.0",

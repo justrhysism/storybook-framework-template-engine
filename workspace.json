@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "storybook-framework-template-engine": {
+      "root": "app/template-engine",
+      "type": "library"
+    }
+  }
+}
