@@ -19,7 +19,7 @@ export async function renderToDOM(
   }: RenderContext<TemplateEngineFramework>,
   domElement: HTMLElement
 ) {
-  const { parameters } = storyContext;
+  const { args, parameters } = storyContext;
 
   const template = storyFn();
   showMain();
@@ -48,7 +48,6 @@ export async function renderToDOM(
   }
 
   const renderFn = parameters.templateEngine?.render;
-  const args = parameters.args ?? {};
 
   // Check for render function if we actually need it (i.e. the story returns a string)
   if (!renderFn) {
