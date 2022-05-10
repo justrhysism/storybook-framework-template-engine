@@ -1,6 +1,6 @@
 {
   "name": "storybook-framework-template-engine",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Storybook for Templating Engines: View templated snippets in isolation with Hot Reloading.",
   "keywords": [
     "storybook",
