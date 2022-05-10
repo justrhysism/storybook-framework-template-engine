@@ -122,7 +122,7 @@ function run() {
 
       const isAllPackages = process.argv.includes('--all');
       if (isAllPackages) {
-        glob = '@storybook/*';
+        glob = ['@storybook/*', 'storybook-framework-template-engine'];
 
         log.warn(
           'You are building a lot of packages on watch mode. This is an expensive action and might slow your computer down.\nIf this is an issue, run yarn build to filter packages and speed things up!'

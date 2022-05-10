@@ -14,8 +14,8 @@ function getCommand(watch, dir) {
 
   const args = [
     './src',
-    `--out-dir ${dir}`,
-    `--config-file ${path.resolve(__dirname, '../../.babelrc.js')}`,
+    `--out-dir "${dir}"`,
+    `--config-file "${path.resolve(__dirname, '../../.babelrc.js')}"`,
     `--copy-files`,
   ];
 

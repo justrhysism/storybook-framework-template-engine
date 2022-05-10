@@ -70,6 +70,10 @@ packages:
     access: $all
     publish: $all
 
+  'storybook-framework-template-engine':
+    access: $all
+    publish: $all
+
   'sb':
     access: $all
     publish: $all
